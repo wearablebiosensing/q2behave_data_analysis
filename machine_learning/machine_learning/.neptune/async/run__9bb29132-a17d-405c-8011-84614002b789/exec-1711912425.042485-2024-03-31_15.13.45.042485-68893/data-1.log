@@ -1,0 +1,8 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "2-Foldtest_size_0.2_RF"}, "version": 1, "at": 1711912425.1631029}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1711912425.163618}
+{"obj": {"type": "AssignString", "path": ["monitoring", "cdee3e71", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1711912425.1639009}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1711912425.164099}
+{"obj": {"type": "AssignString", "path": ["monitoring", "cdee3e71", "pid"], "value": "68893"}, "version": 5, "at": 1711912425.164295}
+{"obj": {"type": "AssignString", "path": ["monitoring", "cdee3e71", "tid"], "value": "140704736732736"}, "version": 6, "at": 1711912425.1644642}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1711912425.164592}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_table"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_table-1711912426.765282-2024-03-31_15.13.46.765282.html", "clean_after_upload": false}, "version": 8, "at": 1711912426.769123}

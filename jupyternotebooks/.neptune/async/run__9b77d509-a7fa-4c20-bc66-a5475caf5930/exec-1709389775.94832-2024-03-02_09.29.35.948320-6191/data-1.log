@@ -1,0 +1,9 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "15-Foldtest_size_0.2"}, "version": 1, "at": 1709389776.0678852}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1709389776.070247}
+{"obj": {"type": "AssignString", "path": ["monitoring", "b8543b68", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1709389776.0706508}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1709389776.070838}
+{"obj": {"type": "AssignString", "path": ["monitoring", "b8543b68", "pid"], "value": "6191"}, "version": 5, "at": 1709389776.071021}
+{"obj": {"type": "AssignString", "path": ["monitoring", "b8543b68", "tid"], "value": "140704505513536"}, "version": 6, "at": 1709389776.071198}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1709389776.071327}
+{"obj": {"type": "AssignString", "path": ["feature_list"], "value": "Index(['Accel_X_zero_cross_rate', 'Accel_Y_zero_cross_rate',\n       'Accel_Z_zero_cross_rate', 'Gyro_X_zero_cross_rate',\n       'Gyro_Y_zero_cross_rate', 'Gyro_Z_zero_cross_rate', 'type',\n       'participantId', 'Filename'],\n      dtype='object')"}, "version": 8, "at": 1709389776.0841768}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_table"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_table-1709389776.235185-2024-03-02_09.29.36.235185.html", "clean_after_upload": false}, "version": 9, "at": 1709389776.2356322}

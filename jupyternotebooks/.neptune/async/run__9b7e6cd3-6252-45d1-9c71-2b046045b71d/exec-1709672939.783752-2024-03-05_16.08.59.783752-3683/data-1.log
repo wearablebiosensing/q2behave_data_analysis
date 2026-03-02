@@ -1,0 +1,9 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "5-Foldtest_size_0.2"}, "version": 1, "at": 1709672939.887149}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1709672939.8876102}
+{"obj": {"type": "AssignString", "path": ["monitoring", "6825cf7f", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1709672939.887852}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1709672939.888043}
+{"obj": {"type": "AssignString", "path": ["monitoring", "6825cf7f", "pid"], "value": "3683"}, "version": 5, "at": 1709672939.8882308}
+{"obj": {"type": "AssignString", "path": ["monitoring", "6825cf7f", "tid"], "value": "140704522110528"}, "version": 6, "at": 1709672939.888408}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1709672939.888541}
+{"obj": {"type": "AssignString", "path": ["feature_list"], "value": "Index(['Accel_X_mean', 'Accel_Y_mean', 'Accel_Z_mean', 'Gyro_X_mean',\n       'Gyro_Y_mean', 'Gyro_Z_mean', 'Accel_X_std', 'Accel_Y_std',\n       'Accel_Z_std', 'Gyro_X_std', 'Gyro_Y_std', 'Gyro_Z_std',\n       'Accel_X_kurtosis', 'Accel_Y_kurtosis', 'Accel_Z_kurtosis',\n       'Gyro_X_kurtosis', 'Gyro_Y_kurtosis', 'Gyro_Z_kurtosis',\n       'Accel_X_skewness', 'Accel_Y_skewness', 'Accel_Z_skewness',\n       'Gyro_X_skewness', 'Gyro_Y_skewness', 'Filename', 'type',\n       'participantId', 'activityID'],\n      dtype='object')"}, "version": 8, "at": 1709672939.897894}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_table"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_table-1709672940.214026-2024-03-05_16.09.00.214026.html", "clean_after_upload": false}, "version": 9, "at": 1709672940.2147489}

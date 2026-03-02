@@ -1,0 +1,8 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "5-Foldtest_size_0.4_RF"}, "version": 1, "at": 1708212423.520261}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1708212423.5207522}
+{"obj": {"type": "AssignString", "path": ["monitoring", "30ec197e", "hostname"], "value": "shehjars-MacBook-Pro-2.local"}, "version": 3, "at": 1708212423.521023}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "shehjars-MacBook-Pro-2.local"}, "version": 4, "at": 1708212423.521217}
+{"obj": {"type": "AssignString", "path": ["monitoring", "30ec197e", "pid"], "value": "8221"}, "version": 5, "at": 1708212423.521398}
+{"obj": {"type": "AssignString", "path": ["monitoring", "30ec197e", "tid"], "value": "140704465368640"}, "version": 6, "at": 1708212423.52157}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1708212423.5217128}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_table"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_table-1708212423.543383-2024-02-17_18.27.03.543383.html", "clean_after_upload": false}, "version": 8, "at": 1708212423.545708}

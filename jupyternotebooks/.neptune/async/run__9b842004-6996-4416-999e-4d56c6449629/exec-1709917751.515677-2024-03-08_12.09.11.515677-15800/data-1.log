@@ -1,0 +1,8 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "LOOCV"}, "version": 1, "at": 1709917751.6435578}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1709917751.644107}
+{"obj": {"type": "AssignString", "path": ["monitoring", "cd467e36", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1709917751.644334}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1709917751.6445189}
+{"obj": {"type": "AssignString", "path": ["monitoring", "cd467e36", "pid"], "value": "15800"}, "version": 5, "at": 1709917751.644686}
+{"obj": {"type": "AssignString", "path": ["monitoring", "cd467e36", "tid"], "value": "140704522110528"}, "version": 6, "at": 1709917751.644842}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1709917751.64501}
+{"obj": {"type": "AssignString", "path": ["feature_list"], "value": "Index(['Accel_X_mean', 'Accel_Y_mean', 'Accel_Z_mean', 'Gyro_X_mean',\n       'Gyro_Y_mean', 'Gyro_Z_mean', 'Accel_X_std', 'Accel_Y_std',\n       'Accel_Z_std', 'Gyro_X_std', 'Gyro_Y_std', 'Gyro_Z_std',\n       'Accel_X_kurtosis', 'Accel_Y_kurtosis', 'Accel_Z_kurtosis',\n       'Gyro_X_kurtosis', 'Gyro_Y_kurtosis', 'Gyro_Z_kurtosis',\n       'Accel_X_skewness', 'Accel_Y_skewness', 'Accel_Z_skewness',\n       'Gyro_X_skewness', 'Gyro_Y_skewness', 'Filename', 'type',\n       'participantId', 'activityID'],\n      dtype='object')"}, "version": 8, "at": 1709917751.660491}

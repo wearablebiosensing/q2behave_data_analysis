@@ -1,0 +1,9 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "10-Foldtest_size_0.2"}, "version": 1, "at": 1708872446.444766}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1708872446.4450402}
+{"obj": {"type": "AssignString", "path": ["monitoring", "c4dce9c0", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1708872446.44515}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1708872446.44522}
+{"obj": {"type": "AssignString", "path": ["monitoring", "c4dce9c0", "pid"], "value": "2946"}, "version": 5, "at": 1708872446.4453251}
+{"obj": {"type": "AssignString", "path": ["monitoring", "c4dce9c0", "tid"], "value": "140704401565248"}, "version": 6, "at": 1708872446.44543}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1708872446.4454908}
+{"obj": {"type": "AssignString", "path": ["feature_list"], "value": "Index([' Accel_X_mean_power_psd', ' Accel_Y_mean_power_psd',\n       ' Accel_Z_mean_power_psd', ' Accel_X_sum_freq_diff_power_psd',\n       ' Accel_Y_sum_freq_diff_power_psd', ' Accel_Z_sum_freq_diff_power_psd',\n       ' Accel_X_average_power_power_psd', ' Accel_Y_average_power_power_psd',\n       ' Accel_Z_average_power_power_psd', 'type', 'Filename',\n       'participantId'],\n      dtype='object')"}, "version": 8, "at": 1708872446.449868}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_table"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_table-1708872446.469533-2024-02-25_09.47.26.469533.html", "clean_after_upload": false}, "version": 9, "at": 1708872446.470728}

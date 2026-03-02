@@ -1,0 +1,63 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "3-Foldtest_size_0.2_RF"}, "version": 1, "at": 1712107476.47767}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1712107476.4781}
+{"obj": {"type": "AssignString", "path": ["monitoring", "84ccd307", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1712107476.4783309}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1712107476.478513}
+{"obj": {"type": "AssignString", "path": ["monitoring", "84ccd307", "pid"], "value": "51560"}, "version": 5, "at": 1712107476.478706}
+{"obj": {"type": "AssignString", "path": ["monitoring", "84ccd307", "tid"], "value": "140704701883968"}, "version": 6, "at": 1712107476.478871}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1712107476.479032}
+{"obj": {"type": "AssignString", "path": ["pid"], "value": "P6"}, "version": 8, "at": 1712107476.4899461}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_table"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_table-1712107477.124557-2024-04-02_21.24.37.124557.html", "clean_after_upload": false}, "version": 9, "at": 1712107477.126444}
+{"obj": {"type": "AssignString", "path": ["original"], "value": "type\n0    1150\n1      54\nName: count, dtype: int64"}, "version": 10, "at": 1712107477.1276212}
+{"obj": {"type": "AssignString", "path": ["train_samples_undersampled"], "value": "type\n0    54\n1    54\nName: count, dtype: int64"}, "version": 11, "at": 1712107477.128267}
+{"obj": {"type": "AssignString", "path": ["test_samples_undersampled"], "value": "type\n1    11\n0    11\nName: count, dtype: int64"}, "version": 12, "at": 1712107477.128885}
+{"obj": {"type": "UploadFile", "path": ["data", "test_data"], "ext": "html", "file_path": null, "tmp_file_name": "data_test_data-1712107483.882965-2024-04-02_21.24.43.882965.html", "clean_after_upload": false}, "version": 13, "at": 1712107483.883635}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "memory"], "value": "None"}, "version": 14, "at": 1712107484.7153459}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "steps"], "value": "[('rf', RandomForestClassifier(min_samples_split=5, random_state=8))]"}, "version": 15, "at": 1712107484.715948}
+{"obj": {"type": "AssignBool", "path": ["cls_summary", "all_params", "verbose"], "value": false}, "version": 16, "at": 1712107484.7160692}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf"], "value": "RandomForestClassifier(min_samples_split=5, random_state=8)"}, "version": 17, "at": 1712107484.716555}
+{"obj": {"type": "AssignBool", "path": ["cls_summary", "all_params", "rf__bootstrap"], "value": true}, "version": 18, "at": 1712107484.7166982}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "all_params", "rf__ccp_alpha"], "value": 0.0}, "version": 19, "at": 1712107484.716776}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__class_weight"], "value": "None"}, "version": 20, "at": 1712107484.716851}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__criterion"], "value": "gini"}, "version": 21, "at": 1712107484.716961}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__max_depth"], "value": "None"}, "version": 22, "at": 1712107484.717061}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__max_features"], "value": "sqrt"}, "version": 23, "at": 1712107484.71715}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__max_leaf_nodes"], "value": "None"}, "version": 24, "at": 1712107484.7172391}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__max_samples"], "value": "None"}, "version": 25, "at": 1712107484.7173948}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "all_params", "rf__min_impurity_decrease"], "value": 0.0}, "version": 26, "at": 1712107484.71754}
+{"obj": {"type": "AssignInt", "path": ["cls_summary", "all_params", "rf__min_samples_leaf"], "value": 1}, "version": 27, "at": 1712107484.717671}
+{"obj": {"type": "AssignInt", "path": ["cls_summary", "all_params", "rf__min_samples_split"], "value": 5}, "version": 28, "at": 1712107484.717772}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "all_params", "rf__min_weight_fraction_leaf"], "value": 0.0}, "version": 29, "at": 1712107484.717845}
+{"obj": {"type": "AssignInt", "path": ["cls_summary", "all_params", "rf__n_estimators"], "value": 100}, "version": 30, "at": 1712107484.717906}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "all_params", "rf__n_jobs"], "value": "None"}, "version": 31, "at": 1712107484.717979}
+{"obj": {"type": "AssignBool", "path": ["cls_summary", "all_params", "rf__oob_score"], "value": false}, "version": 32, "at": 1712107484.718045}
+{"obj": {"type": "AssignInt", "path": ["cls_summary", "all_params", "rf__random_state"], "value": 8}, "version": 33, "at": 1712107484.718111}
+{"obj": {"type": "AssignInt", "path": ["cls_summary", "all_params", "rf__verbose"], "value": 0}, "version": 34, "at": 1712107484.718173}
+{"obj": {"type": "AssignBool", "path": ["cls_summary", "all_params", "rf__warm_start"], "value": false}, "version": 35, "at": 1712107484.71824}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "pickled_model"], "ext": "pkl", "file_path": null, "tmp_file_name": "cls_summary_pickled_model-1712107484.71833-2024-04-02_21.24.44.718330.pkl", "clean_after_upload": false}, "version": 36, "at": 1712107484.7189372}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "test", "preds"], "ext": "html", "file_path": null, "tmp_file_name": "cls_summary_test_preds-1712107484.719257-2024-04-02_21.24.44.719257.html", "clean_after_upload": false}, "version": 37, "at": 1712107484.719761}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "test", "preds_proba"], "ext": "html", "file_path": null, "tmp_file_name": "cls_summary_test_preds_proba-1712107484.719912-2024-04-02_21.24.44.719912.html", "clean_after_upload": false}, "version": 38, "at": 1712107484.720304}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_0", "precision"], "value": 0.9166666666666666}, "version": 39, "at": 1712107484.7206452}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_0", "recall"], "value": 1.0}, "version": 40, "at": 1712107484.7207592}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_0", "fbeta_score"], "value": 0.9565217391304348}, "version": 41, "at": 1712107484.7208269}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_0", "support"], "value": 11.0}, "version": 42, "at": 1712107484.7209542}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_1", "precision"], "value": 1.0}, "version": 43, "at": 1712107484.7210932}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_1", "recall"], "value": 0.9090909090909091}, "version": 44, "at": 1712107484.721171}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_1", "fbeta_score"], "value": 0.9523809523809523}, "version": 45, "at": 1712107484.721229}
+{"obj": {"type": "AssignFloat", "path": ["cls_summary", "test", "scores", "class_1", "support"], "value": 11.0}, "version": 46, "at": 1712107484.7212942}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "diagnostics_charts", "classification_report"], "ext": "png", "file_path": null, "tmp_file_name": "cls_summary_diagnostics_charts_classification_report-1712107484.721391-2024-04-02_21.24.44.721391.png", "clean_after_upload": false}, "version": 47, "at": 1712107484.7217019}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "diagnostics_charts", "confusion_matrix"], "ext": "png", "file_path": null, "tmp_file_name": "cls_summary_diagnostics_charts_confusion_matrix-1712107484.721824-2024-04-02_21.24.44.721824.png", "clean_after_upload": false}, "version": 48, "at": 1712107484.722126}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "diagnostics_charts", "ROC_AUC"], "ext": "png", "file_path": null, "tmp_file_name": "cls_summary_diagnostics_charts_ROC_AUC-1712107484.722241-2024-04-02_21.24.44.722241.png", "clean_after_upload": false}, "version": 49, "at": 1712107484.722498}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "diagnostics_charts", "precision_recall"], "ext": "png", "file_path": null, "tmp_file_name": "cls_summary_diagnostics_charts_precision_recall-1712107484.722597-2024-04-02_21.24.44.722597.png", "clean_after_upload": false}, "version": 50, "at": 1712107484.722796}
+{"obj": {"type": "UploadFile", "path": ["cls_summary", "diagnostics_charts", "class_prediction_error"], "ext": "png", "file_path": null, "tmp_file_name": "cls_summary_diagnostics_charts_class_prediction_error-1712107484.722874-2024-04-02_21.24.44.722874.png", "clean_after_upload": false}, "version": 51, "at": 1712107484.723072}
+{"obj": {"type": "AssignString", "path": ["cls_summary", "integration", "about", "neptune-sklearn"], "value": "2.1.0"}, "version": 52, "at": 1712107484.723182}
+{"obj": {"type": "AssignInt", "path": ["params", "rf__min_samples_split"], "value": 5}, "version": 53, "at": 1712107484.72347}
+{"obj": {"type": "AssignInt", "path": ["params", "rf__n_estimators"], "value": 100}, "version": 54, "at": 1712107484.723545}
+{"obj": {"type": "UploadFile", "path": ["data", "feature_importance"], "ext": "html", "file_path": null, "tmp_file_name": "data_feature_importance-1712107494.412376-2024-04-02_21.24.54.412376.html", "clean_after_upload": false}, "version": 55, "at": 1712107494.412868}
+{"obj": {"type": "UploadFile", "path": ["feature_importance"], "ext": "png", "file_path": "/Users/shehjarsadhu/Desktop/UniversityOfRhodeIsland/Graduate/WBL/Project_Q2Behave/GitQ2Bheave/q2behave_data_analysis/jupyternotebooks/ML_Toolbox/feature_importance.png", "tmp_file_name": null, "clean_after_upload": false}, "version": 56, "at": 1712107494.508097}
+{"obj": {"type": "UploadFile", "path": ["roc_curve"], "ext": "png", "file_path": "/Users/shehjarsadhu/Desktop/UniversityOfRhodeIsland/Graduate/WBL/Project_Q2Behave/GitQ2Bheave/q2behave_data_analysis/jupyternotebooks/ML_Toolbox/roc_curve_class.png", "tmp_file_name": null, "clean_after_upload": false}, "version": 57, "at": 1712107494.632739}
+{"obj": {"type": "AssignFloat", "path": ["precision"], "value": 0.9583333333333333}, "version": 58, "at": 1712107494.8646579}
+{"obj": {"type": "AssignFloat", "path": ["recall"], "value": 0.9545454545454546}, "version": 59, "at": 1712107494.864919}
+{"obj": {"type": "AssignFloat", "path": ["f1_score"], "value": 0.9544513457556936}, "version": 60, "at": 1712107494.86501}
+{"obj": {"type": "AssignFloat", "path": ["mean_train_accuracy"], "value": 0.9907407407407408}, "version": 61, "at": 1712107494.865099}
+{"obj": {"type": "AssignFloat", "path": ["mean_test_accuracy"], "value": 0.8796296296296297}, "version": 62, "at": 1712107494.8651788}
+{"obj": {"type": "AssignFloat", "path": ["mean_sensitivity"], "value": 0.8333333333333334}, "version": 63, "at": 1712107494.8652558}
