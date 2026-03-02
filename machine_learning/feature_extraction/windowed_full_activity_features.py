@@ -1,38 +1,37 @@
+# ---------------- Standard Library Imports ----------------
 import os
-import math
 import sys
+import math
 import time
 from datetime import datetime
-#---------------------------------------
-import pandas as pd 
+
+# ---------------- Third-Party Imports ----------------
+import pandas as pd
 import numpy as np
-#---------------------------------------
-from scipy.signal import welch
-from scipy.signal import find_peaks
+
+# SciPy signal / stats / FFT
 from scipy import stats
-from scipy import signal
+from scipy.signal import (
+    welch, find_peaks, butter, lfilter, peak_prominences, chirp, peak_widths
+)
 from scipy.fft import fftshift
-import scipy as sc
 from scipy.stats import skew, kurtosis
-import scipy.fftpack                 
-from scipy import signal
-from scipy.signal import find_peaks
-from scipy.signal import butter, lfilter
-from scipy.signal import find_peaks, peak_prominences
-from scipy.signal import chirp, peak_widths
-#---------------------------------------
+import scipy.fftpack
+
+# ---------------- Visualization Imports ----------------
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import plotly.graph_objects as go
-import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-#----------------Local Imports-----------------------
-sys.path.append('/Users/shehjarsadhu/Desktop/UniversityOfRhodeIsland/Graduate/WBL/Project_Q2Behave/CODE/GitQ2Bheave/q2behave_data_analysis/machine_learning/feature_extraction')
-from statistical_features import *
-from power_spectral_features import *
-from filtering_module import *
-from helpers import *
+# ---------------- Local Project Imports ----------------
+sys.path.append(
+    '/Users/shehjarsadhu/Desktop/UniversityOfRhodeIsland/Graduate/WBL/Project_Q2Behave/CODE/GitQ2Bheave/q2behave_data_analysis/machine_learning/feature_extraction'
+)
+from statistical_features import  * #extract_psd_features, get_concated_features  # explicitly list used functions
+from power_spectral_features import *  # replace * with explicit imports if possible
+from filtering_module import  * #process_filter_code, butter_bandpass_filter  # explicitly list used functions
+from helpers import *  # replace * with explicit imports if possible
 
 #################################################################################################################################
 # Iterates over a full activity instead of blobs of segments to extract features.
