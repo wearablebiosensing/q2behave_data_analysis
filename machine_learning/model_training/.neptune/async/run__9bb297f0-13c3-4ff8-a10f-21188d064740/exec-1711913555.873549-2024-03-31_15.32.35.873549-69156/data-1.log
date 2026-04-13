@@ -1,7 +1,0 @@
-{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "2-Foldtest_size_0.2_RF"}, "version": 1, "at": 1711913555.9899352}
-{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2, "at": 1711913555.990433}
-{"obj": {"type": "AssignString", "path": ["monitoring", "58564477", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 3, "at": 1711913555.99062}
-{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "156.4.20.172.s.wireless.uri.edu"}, "version": 4, "at": 1711913555.990774}
-{"obj": {"type": "AssignString", "path": ["monitoring", "58564477", "pid"], "value": "69156"}, "version": 5, "at": 1711913555.9909172}
-{"obj": {"type": "AssignString", "path": ["monitoring", "58564477", "tid"], "value": "140704736732736"}, "version": 6, "at": 1711913555.991209}
-{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7, "at": 1711913555.991425}
