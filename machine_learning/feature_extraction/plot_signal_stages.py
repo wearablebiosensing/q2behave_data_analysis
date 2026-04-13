@@ -48,10 +48,9 @@ def get_psd_for_plotly(data_array, Fs):
             # Skip bandpass if Nyquist is too low
             bp_data = detrend(data_array)
             
-        ma_data = moving_average(bp_data, 5)
-        nperseg = min(len(ma_data), 256)
+        nperseg = min(len(bp_data), 256)
         if nperseg > 0:
-            freqs, psd = welch(ma_data, fs=Fs, nperseg=nperseg)
+            freqs, psd = welch(bp_data, fs=Fs, nperseg=nperseg)
             return freqs, np.abs(psd)
     except Exception as e:
         print(f"PSD Error: {e}")
@@ -60,8 +59,11 @@ def get_psd_for_plotly(data_array, Fs):
 
 def add_signal_stages(fig, data, x_axis, Fs, trace_name, base_color, row, col):
     """Helper to plot raw, bandpass, and moving avg data into a single Plotly subplot."""
-    # 1. Raw Data (Solid Base Color identical to PSD traces)
-    fig.add_trace(go.Scatter(x=x_axis, y=data, mode='lines', opacity=1.0, line=dict(color=base_color, width=1.5), name=f'Raw {trace_name}'), row=row, col=col)
+    # Only show the legend for the very first plot (top-left)
+    show_leg = True if (row == 1 and col == 1) else False
+
+    # 1. Raw Data
+    fig.add_trace(go.Scatter(x=x_axis, y=data, mode='lines', opacity=1.0, line=dict(color=base_color, width=1.5), name='Raw Data', showlegend=show_leg), row=row, col=col)
     
     if len(data) >= 5 and Fs > 10.0:
         from scipy.signal import detrend
@@ -69,13 +71,8 @@ def add_signal_stages(fig, data, x_axis, Fs, trace_name, base_color, row, col):
         try:
             detrended_data = detrend(data)
             bp_data = butter_bandpass_filter(detrended_data, 1, 5, Fs, order=5)
-            # Original red color
-            fig.add_trace(go.Scatter(x=x_axis, y=bp_data, mode='lines', opacity=0.8, line=dict(color='#d62728', width=2), name=f'BP {trace_name}'), row=row, col=col)
-            
-            # 3. Moving Average
-            ma_data = moving_average(bp_data, 5)
-            # Original green color
-            fig.add_trace(go.Scatter(x=x_axis, y=ma_data, mode='lines', line=dict(color='#2ca02c', width=3), name=f'MA {trace_name}'), row=row, col=col)
+            # Filtered trace color (Grey)
+            fig.add_trace(go.Scatter(x=x_axis, y=bp_data, mode='lines', opacity=0.8, line=dict(color='grey', width=2), name='Filtered (1-5 Hz)', showlegend=show_leg), row=row, col=col)
         except Exception as e:
             print(f"Filter error for {trace_name}: {e}")
 
@@ -116,55 +113,55 @@ def raw_plots_plotly(df, filename, Fs):
     if acc_x in df.columns:
         add_signal_stages(fig, df[acc_x].values, x_axis, Fs, 'Acc X', '#1e81b0', 1, 1)
     if beh_code in df.columns:
-        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code X', line=dict(color="#21130d")), row=1, col=1)
+        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code', line=dict(color="#21130d"), showlegend=True), row=1, col=1)
         
     if acc_y in df.columns:
         add_signal_stages(fig, df[acc_y].values, x_axis, Fs, 'Acc Y', '#e28743', 1, 2)
     if beh_code in df.columns:
-        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code Y', line=dict(color="#21130d")), row=1, col=2)
+        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code', line=dict(color="#21130d"), showlegend=False), row=1, col=2)
 
     if acc_z in df.columns:
         add_signal_stages(fig, df[acc_z].values, x_axis, Fs, 'Acc Z', '#063970', 1, 3)
     if beh_code in df.columns:
-        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code Z', line=dict(color="#21130d")), row=1, col=3)
+        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code', line=dict(color="#21130d"), showlegend=False), row=1, col=3)
 
     # ================= ROW 2: Gyroscope Data =================
     if gyro_x in df.columns:
         add_signal_stages(fig, df[gyro_x].values, x_axis, Fs, 'Gyro X', '#1e81b0', 2, 1)
     if beh_code in df.columns:
-        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code GyroX', line=dict(color="#21130d") ), row=2, col=1)
+        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code', line=dict(color="#21130d"), showlegend=False), row=2, col=1)
 
     if gyro_y in df.columns:
         add_signal_stages(fig, df[gyro_y].values, x_axis, Fs, 'Gyro Y', '#e28743', 2, 2)
     if beh_code in df.columns:
-        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code GyroY', line=dict(color="#21130d") ), row=2, col=2)
+        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code', line=dict(color="#21130d"), showlegend=False), row=2, col=2)
 
     if gyro_z in df.columns:
         add_signal_stages(fig, df[gyro_z].values, x_axis, Fs, 'Gyro Z', '#063970', 2, 3)
     if beh_code in df.columns:
-        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code GyroZ', line=dict(color="#21130d") ), row=2, col=3)
+        fig.add_trace(go.Scatter(x=x_axis, y=df[beh_code], mode='lines', name='Behavior Code', line=dict(color="#21130d"), showlegend=False), row=2, col=3)
         
     # ================= ROW 3: PSD Accelerometer Data =================
     if acc_x in df.columns:
         f, p = get_psd_for_plotly(df[acc_x].values, Fs)
-        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD Acc X', line=dict(color="#1e81b0")), row=3, col=1)
+        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD', line=dict(color="#1e81b0"), showlegend=True), row=3, col=1)
     if acc_y in df.columns:
         f, p = get_psd_for_plotly(df[acc_y].values, Fs)
-        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD Acc Y', line=dict(color="#e28743")), row=3, col=2)
+        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD', line=dict(color="#e28743"), showlegend=False), row=3, col=2)
     if acc_z in df.columns:
         f, p = get_psd_for_plotly(df[acc_z].values, Fs)
-        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD Acc Z', line=dict(color="#063970")), row=3, col=3)
+        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD', line=dict(color="#063970"), showlegend=False), row=3, col=3)
 
     # ================= ROW 4: PSD Gyroscope Data =================
     if gyro_x in df.columns:
         f, p = get_psd_for_plotly(df[gyro_x].values, Fs)
-        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD Gyro X', line=dict(color="#1e81b0")), row=4, col=1)
+        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD', line=dict(color="#1e81b0"), showlegend=False), row=4, col=1)
     if gyro_y in df.columns:
         f, p = get_psd_for_plotly(df[gyro_y].values, Fs)
-        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD Gyro Y', line=dict(color="#e28743")), row=4, col=2)
+        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD', line=dict(color="#e28743"), showlegend=False), row=4, col=2)
     if gyro_z in df.columns:
         f, p = get_psd_for_plotly(df[gyro_z].values, Fs)
-        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD Gyro Z', line=dict(color="#063970")), row=4, col=3)
+        fig.add_trace(go.Scatter(x=f, y=p, mode='lines', name='PSD', line=dict(color="#063970"), showlegend=False), row=4, col=3)
     
     # Apply Template
     fig.update_layout(template="simple_white")

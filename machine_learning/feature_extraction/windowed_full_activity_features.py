@@ -53,28 +53,19 @@ def average_sampling_rate(df):
     else:
         return 0
 
-def apply_moving_avg(df, window, Fs):
-
-    mov_average_filt_AccX = process_filter_code(df,' Accel_X',Fs,window)  
-    mov_average_filt_AccY = process_filter_code(df,' Accel_Y',Fs,window)
-    mov_average_filt_AccZ = process_filter_code(df,' Accel_Z',Fs,window)
+def apply_filtering(df, Fs):
+    # Dummy window size since it's no longer used for moving average, 
+    # but the process_filter_code still accepts it.
+    window = 5 
+    df["Filtered_Accel_X"] = process_filter_code(df,' Accel_X',Fs,window)  
+    df["Filtered_Accel_Y"] = process_filter_code(df,' Accel_Y',Fs,window)
+    df["Filtered_Accel_Z"] = process_filter_code(df,' Accel_Z',Fs,window)
                         
-    mov_average_filt_GryX = process_filter_code(df,' Gyro_X',Fs,window)
-    mov_average_filt_GryY = process_filter_code(df,' Gyro_Y',Fs,window)
-    mov_average_filt_GryZ = process_filter_code(df,' Gyro_Z',Fs,window)
-    mov_average_filt_Gry_max  = process_filter_code(df,'max_of_gry',Fs,window)
-    mov_average_filt_Acc_max  = process_filter_code(df,'max_of_acc',Fs,window)
-
-    mov_avg_yf,mov_avg_xf,mov_avg_AMP = my_fft(df[' Accel_X'].to_numpy(),Fs)
-                        
-    df["Filtered_Accel_X"] = mov_average_filt_AccX
-    df["Filtered_Accel_Y"] = mov_average_filt_AccY
-    df["Filtered_Accel_Z"] = mov_average_filt_AccZ
-    df["Filtered_Gryo_X"] = mov_average_filt_GryX
-    df["Filtered_Gryo_Y"] = mov_average_filt_GryY
-    df["Filtered_Gryo_Z"] = mov_average_filt_GryZ
-    df["Filtered_Gryo_Max"] = mov_average_filt_Gry_max
-    df["Filtered_Acc_Max"] = mov_average_filt_Acc_max
+    df["Filtered_Gryo_X"] = process_filter_code(df,' Gyro_X',Fs,window)
+    df["Filtered_Gryo_Y"] = process_filter_code(df,' Gyro_Y',Fs,window)
+    df["Filtered_Gryo_Z"] = process_filter_code(df,' Gyro_Z',Fs,window)
+    df["Filtered_Gryo_Max"] = process_filter_code(df,'max_of_gry',Fs,window)
+    df["Filtered_Acc_Max"] = process_filter_code(df,'max_of_acc',Fs,window)
 
     return df
 
@@ -93,13 +84,12 @@ def windowed_features(df, window_size, overlap):
     dfs_combined = []
 
     Fs = average_sampling_rate(df)
-    moving_average_filter_window_size = 5
-    moving_avereaged_df = apply_moving_avg(df,moving_average_filter_window_size,Fs)
+    filtered_df = apply_filtering(df, Fs)
 
     while start < num_samples:
 
         end = min(start + window_size, num_samples)
-        window_data = moving_avereaged_df.iloc[int(start):int(end)]
+        window_data = filtered_df.iloc[int(start):int(end)]
 
         print("windowed_features()===========:/  window_data",window_data.shape)
         print("Window Number: ",window_counter )
@@ -196,9 +186,10 @@ def run_activity_based_windowing(folder_path):
     all_feature_df_list = []
 
     file_list = os.listdir(folder_path)
-    files_without_ds_store = [file for file in file_list if not file.startswith('.DS_Store')]
+    # Skip all hidden files (like .DS_Store, ._AppleDouble files)
+    valid_files = [file for file in file_list if not file.startswith('.')]
 
-    for filename in files_without_ds_store:
+    for filename in valid_files:
 
         if "Talking_to_peers" in filename or "Talking_to_self" in filename:
             print("Skipping Talking behavior:", filename)
@@ -254,7 +245,7 @@ def run_activity_based_windowing(folder_path):
 # RUN
 ############################################################
 
-root = "/Users/shehjarsadhu/Desktop/UniversityOfRhodeIsland/Graduate/WBL/Project_Q2Behave/DATASET/"
+root = "/Volumes/ss/Project_Q2behave/DATASET/pre_processed/"
 folder_path = root + "BlobsOFSegments"
 
 feature_dfs_list, stat_feature_df_list, all_feature_df_list = run_activity_based_windowing(folder_path)

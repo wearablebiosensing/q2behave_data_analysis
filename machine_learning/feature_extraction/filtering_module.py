@@ -84,13 +84,12 @@ Returns:Filtered signal with a combination of filteres or a sigle filter.
 # low=1,high=5 is Frequency (Hz)of the bands  of interest  
 # window number of samples in one window in the moving average filter.
 def process_filter_code(df,column_name,Fs,window,low=1,high=5): # ' Accel_X'
-    # 2) DETREND
+    # 1) DETREND
     detrended_signal = signal.detrend(df[column_name])
-    # 4) BAND PASS 1-5 Hz
-    band_pass_filtered = butter_bandpass_filter(df[column_name], low, high, Fs, order=5)
-    # 5) MOVIING AVERAGE  window_size = 5
-    mov_average_filt = moving_average(band_pass_filtered, window) #scipy.signal.medfilt(df_finger_tapping_2_5_index_norm[0], kernel_size=9)
-    return mov_average_filt
+    # 2) BAND PASS 1-5 Hz (applied to detrended_signal)
+    band_pass_filtered = butter_bandpass_filter(detrended_signal, low, high, Fs, order=5)
+    
+    return band_pass_filtered
 """
 Helpler function to visvulize the filtered signals.
 Plots a 2x3 plot containing Ax Ay Az Gx Gy Gz aling with their filtered data.
